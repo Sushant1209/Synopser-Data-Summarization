@@ -2,7 +2,7 @@
  Ed-Tech
 
 # Title
- “Synopser - Data Summarization”
+ “Synopser - Text Summarization”
 
 # Problem Statement / Opportunity
    The amount of data produced every day is mind-boggling. There is a problem of searching for relevent documents from the number of available documents 
