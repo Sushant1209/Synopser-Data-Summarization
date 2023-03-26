@@ -16,7 +16,7 @@
         class="fixed inset-0 w-full flex flex-col justify-center justify-items-center content-center h-20 rounded-b-lg">
         <img src="/static/images/SynopserLogo.png" alt="Logo"
             class="object-contain w-16 self-center md:self-left md:w-30">
-        <div class="self-center text-white">Data Summarization</div>
+        <div class="self-center text-white">Text Summarization</div>
     </header>
 
     <section class="flex flex-wrap mt-20 w-full">
@@ -44,7 +44,8 @@
                     cols="30" name="result" readonly placeholder="Your Summary">{{result}}</textarea>
                 <button
                     class="m-2 bg-blue-400 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg self-center"
-                    onclick="myFunction()">Copy text</button>
+                    onclick="myFunction()">Copy text & Speak</button>
+            
             </div>
         </div>
     </section>
@@ -55,12 +56,13 @@
 
             /* Select the text field */
             copyText.select();
-            copyText.setSelectionRange(0, 1000); /* For mobile devices */
+            copyText.setSelectionRange(0, 10000); /* For mobile devices */
 
             /* Copy the text inside the text field */
             navigator.clipboard.writeText(copyText.value);
         }
     </script>
+    
     <script>
         function Check() {
 
@@ -73,6 +75,33 @@
             }
         }
     </script>
+
+
+    <!-- Text to speech key -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=x6FjNpW2"></script>
+
+<script> 
+function getSelectionText() {
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    // for Internet Explorer 8 and below. For Blogger, you should use &amp;&amp; instead of &&.
+    } else if (document.selection && document.selection.type != "Control") { 
+        text = document.selection.createRange().text;
+    }
+    return text;
+}
+$(document).ready(function (){ // when the document has completed loading
+   $(document).mouseup(function (e){ // attach the mouseup event for all div and pre tags
+      setTimeout(function() { // When clicking on a highlighted area, the value stays highlighted until after the mouseup event, and would therefore stil be captured by getSelection. This micro-timeout solves the issue. 
+         responsiveVoice.cancel(); // stop anything currently being spoken
+         responsiveVoice.speak(getSelectionText()); //speak the text as returned by getSelectionText
+      }, 1);
+   });
+});
+</script>
+
+
 </body>
 
 </html>
