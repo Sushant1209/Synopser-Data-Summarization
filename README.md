@@ -13,22 +13,26 @@
 # Project Description
   Aim of our project  is to build Deep learning based solution that generates an Abstractive Text summary of content available in Textbox of our webapp 
   entered by user. User can customize the length of summary using horizontal bar designed in webapp. After successfully submitting text data , user will
-  get summarize data in output box. Now user can copy Summary using ‘Copy Text’ button.
+  get summarize data in output box. 
+  Now user can copy the Summary using the ‘Copy Text & Speak’ button and after that, the selected summary is spoken by our implemented speak feature.
+  
 # Implementation
  •	Created HTML and CSS page using Visual Studio Code.
  •	Created Flask App using “Hugging Face – Natural Language Processing Summarization API”.
  •	Connected Flask App with Front-End.
+ 
 # Objective of Project
  •	Reduce reading time
  •	When researching documents, summaries make the selection process easier.
  •	Effective in creating Short Notes.
+ 
 # Primary Azure Services
  •	Visual Studio Code
  •	Web App
  •	App Services
  
 # Demo
-  Link:-  https://drive.google.com/file/d/1UVJZP6RTYNb2ascdwWxN8uo8MXXmNnhD/view?usp=share_link
+  Link:-  https://drive.google.com/file/d/1XJnk3fRPINOtrAVobOxmnE2PS2KAvAjF/view?usp=share_link
 
 
 
